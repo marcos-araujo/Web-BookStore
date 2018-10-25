@@ -47,6 +47,8 @@ public class Livro {
 	
 	@Temporal(TemporalType.DATE)
 	private Calendar dataPublicacao;
+	
+	private String capaPath;
     
 	public Integer getId() {
 		return id;
@@ -95,6 +97,13 @@ public class Livro {
 	}
 	public void setDataPublicacao(Calendar dataPublicacao) {
 		this.dataPublicacao = dataPublicacao;
+	}
+	
+	public String getCapaPath() {
+		return capaPath;
+	}
+	public void setCapaPath(String capaPath) {
+		this.capaPath = capaPath;
 	}
 	
 	@Override
