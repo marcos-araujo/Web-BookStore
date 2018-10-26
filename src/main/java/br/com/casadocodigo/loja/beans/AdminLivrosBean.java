@@ -1,6 +1,5 @@
 package br.com.casadocodigo.loja.beans;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;

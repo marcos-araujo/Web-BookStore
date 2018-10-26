@@ -35,6 +35,7 @@ public class FileSaver {
                 ByteBuffer buffer = ByteBuffer.allocateDirect(1024 * 10);
                 
                 while(inputChannel.read(buffer) != -1) {
+                	buffer.flip();
                     outputChannel.write(buffer);
                     buffer.clear();
                 }
