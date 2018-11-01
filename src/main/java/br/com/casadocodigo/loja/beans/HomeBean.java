@@ -18,4 +18,8 @@ public class HomeBean {
         return dao.ultimosLancamentos();
     }
 
+    public List<Livro> demaisLivros() {
+        return dao.demaisLivros();
+    }
+    
 }
