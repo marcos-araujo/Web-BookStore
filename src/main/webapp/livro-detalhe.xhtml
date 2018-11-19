@@ -3,7 +3,9 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:xlink="http://www.w3.org/1999/xlink">
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
 	<f:metadata>
 	    <f:viewParam id="id" name="id" value="#{livroDetalheBean.id}"/>
@@ -287,7 +289,7 @@
 </header>
 
 	
-<form action="https://www.casadocodigo.com.br/cart/add" method="POST" class="adicionarAoCarrinho">
+<form method="POST" class="adicionarAoCarrinho" jsf:id="formComprar">
 	<ul class="adicionarAoCarrinho-listaOfertas">
 		<li class="adicionarAoCarrinho-oferta" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
 			<label class="adicionarAoCarrinho-infosDaOferta" for="product-variant-2055441665">
@@ -308,9 +310,9 @@
 					</span>
 				</p>
 			</label>
-				<button class="adicionarAoCarrinho-botaoComprar" type="submit" name="id" value="2055441665" title="Compre o E-book">
-					Comprar
-				</button>
+			<button class="adicionarAoCarrinho-botaoComprar" jsf:action="#{carrinhoComprasBean.add(livroDetalheBean.id)}" type="submit" title="Compre o E-book">
+				Comprar
+			</button>
 		</li>
 	</ul>
 </form>
@@ -329,26 +331,26 @@
 </section>
 
 <section class="infosAdicionaisDoLivro infoSection">
-	<h2 class="infoSection-titulo">
-		Dados do produto
-	</h2>
+
+	<h2 class="infoSection-titulo">Dados do produto</h2>
+
 	<dl class="infosAdicionaisDoLivro-info">
-		<dt class="infosAdicionaisDoLivro-info-titulo">
-			Número de páginas:
-		</dt>
-		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="numberOfPages">
-			#{livroDetalheBean.livro.numeroPaginas} páginas
+		<dt class="infosAdicionaisDoLivro-info-titulo">Número de páginas:</dt>
+		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="numberOfPages">#{livroDetalheBean.livro.numeroPaginas} páginas</dd>
+
+		<dt class="infosAdicionaisDoLivro-info-titulo">Data Publicação</dt>
+		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="dataPublicacao">
+		
+			<h:outputText value="#{livroDetalheBean.livro.dataPublicacao.time}">
+			    <f:convertDateTime pattern="dd/MM/yyyy" />
+			</h:outputText>
+		
 		</dd>
-		
-		<dt class="infosAdicionaisDoLivro-info-titulo">
-			ISBN:
-		</dt>
-		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="isbn">
-			978-85-5519-031-5
-		</dd>
-		
-		
+
+		<dt class="infosAdicionaisDoLivro-info-titulo">ISBN:</dt>
+		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="isbn">978-85-5519-031-5</dd>
 	</dl>
+
 	<div class="infosAdicionaisDoLivro-links" role="presentation">
 		
 		<a class="infosAdicionaisDoLivro-button" href="http://erratas.casadocodigo.com.br/errata?book=Java%20SE%208%20Programmer%20I:%20O%20guia%20para%20sua%20certifica%C3%A7%C3%A3o%20Oracle%20Certified%20Associate">
