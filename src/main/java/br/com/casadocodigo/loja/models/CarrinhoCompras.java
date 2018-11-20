@@ -8,10 +8,12 @@ import java.util.List;
 import java.util.Set;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
+import javax.servlet.http.HttpServletResponse;
 
 import br.com.casadocodigo.loja.daos.CompraDAO;
 
@@ -25,7 +27,7 @@ public class CarrinhoCompras implements Serializable{
 
 	@Inject
 	private CompraDAO compraDAO;
-
+	
 	public void add(CarrinhoItem item) {
 		itens.add(item);
     }
@@ -54,10 +56,9 @@ public class CarrinhoCompras implements Serializable{
 		return itens.stream().mapToInt(item -> item.getQuantidade()).sum();
 	}
 
-	public void finalizar(Usuario usuario) {
-	    Compra compra = new Compra();
-	    compra.setUsuario(usuario);
+	public void finalizar(Compra compra) {
 	    compra.setItens(this.toJSON());
+	    compra.setTotal(getTotal());
 	    compraDAO.salvar(compra);
 	}
 
