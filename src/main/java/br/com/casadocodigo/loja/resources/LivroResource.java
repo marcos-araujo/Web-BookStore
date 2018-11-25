@@ -20,18 +20,11 @@ public class LivroResource {
 	private LivroDAO dao;
 
 	@GET
-	@Path("json")
-	@Produces({MediaType.APPLICATION_JSON})
-	public List<Livro> ultimosLancamentosJson() {
-        return dao.ultimosLancamentos();
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	@Path("lancamentos")
+	@Wrapped(element = "livros")
+	public List<Livro> ultimosLancamentos() {
+        return dao.listar();
     }
     
-	@GET
-	@Path("xml")
-	@Wrapped(element = "livros")
-	@Produces({MediaType.APPLICATION_XML})
-	public List<Livro> ultimosLancamentosXML() {
-        return dao.ultimosLancamentos();
-    }
-	
 }
