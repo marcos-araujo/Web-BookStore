@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 import org.hibernate.validator.constraints.Email;
 
 @Entity
-public class SystemUSer {
+public class SystemUser {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

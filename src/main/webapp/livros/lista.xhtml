@@ -25,6 +25,9 @@
 		</nav>
 	
 		<div class="container">
+			<div>
+				Bem vindo, #{currentUser.get().email}			
+			</div>
 			<h:messages />
 		 	<h:dataTable var="livro" value="#{adminListaLivrosBean.livros}" class="table table-bordered table-striped table-hover">
 		        <h:column>
@@ -53,9 +56,7 @@
 				    <f:facet name="header">Capa Path</f:facet>
 				    <img src="#{request.contextPath}/file/#{livro.capaPath}" height="30%" alt="#{livro.titulo}" />
 				</h:column>
-				
 		    </h:dataTable>
-
 		</div>
 
 	</h:body>
