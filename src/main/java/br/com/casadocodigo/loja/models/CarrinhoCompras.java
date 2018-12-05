@@ -8,12 +8,10 @@ import java.util.List;
 import java.util.Set;
 
 import javax.enterprise.context.SessionScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
-import javax.servlet.http.HttpServletResponse;
 
 import br.com.casadocodigo.loja.daos.CompraDAO;
 

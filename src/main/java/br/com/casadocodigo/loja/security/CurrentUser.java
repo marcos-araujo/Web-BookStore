@@ -38,4 +38,8 @@ public class CurrentUser {
     	return request.isUserInRole(role);
     }
     
+    public String logout() {
+    	request.getSession().invalidate();
+    	return "/lista/lista.xhtml?faces-redirect=true";
+    }
 }

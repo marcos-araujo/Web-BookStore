@@ -27,7 +27,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
-
 @Entity
 @Cacheable
 @XmlRootElement
