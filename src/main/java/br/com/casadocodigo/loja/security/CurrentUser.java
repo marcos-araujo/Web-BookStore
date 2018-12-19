@@ -40,6 +40,7 @@ public class CurrentUser {
     
     public String logout() {
     	request.getSession().invalidate();
-    	return "/lista/lista.xhtml?faces-redirect=true";
+    	return "/admin/livros/lista.xhtml?faces-redirect=true";
     }
+    
 }

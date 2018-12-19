@@ -18,5 +18,9 @@ public class UsuariosSession {
     public List<Session> getUsuarios() {
         return sessions;
     }
+
+	public void remove(Session session) {
+		sessions.remove(session);
+	}
     
 }
