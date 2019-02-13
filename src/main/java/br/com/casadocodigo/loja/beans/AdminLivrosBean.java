@@ -2,11 +2,10 @@ package br.com.casadocodigo.loja.beans;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.servlet.http.Part;
 import javax.transaction.Transactional;
 
@@ -16,8 +15,7 @@ import br.com.casadocodigo.loja.infra.FileSaver;
 import br.com.casadocodigo.loja.models.Autor;
 import br.com.casadocodigo.loja.models.Livro;
 
-@Named(value="adminLivrosBean")
-@RequestScoped
+@Model
 public class AdminLivrosBean {
 	
 	@Inject
