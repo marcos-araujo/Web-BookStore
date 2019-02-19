@@ -13,11 +13,19 @@ public class LivroDAO {
 	
 	@PersistenceContext
 	private EntityManager manager;
-	
+
 	public void salvar(Livro livro) {
-		manager.persist(livro);
+		if(livro.getId() == null)
+			manager.persist(livro);
+		else
+			manager.merge(livro);
 	}
 
+	public void deletar(Livro livro) {
+		livro = manager.find(Livro.class, livro.getId());
+		manager.remove(livro);
+	}
+	
 	public List<Livro> listar() {
 		String jpql = "select distinct(l) from Livro l join fetch l.autores";
 		return manager.createQuery(jpql, Livro.class).getResultList();

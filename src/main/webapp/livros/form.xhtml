@@ -12,6 +12,7 @@
     
 	    	<h1>Cadastro de Livros</h1>
 			<h:form enctype="multipart/form-data">
+				<h:inputHidden value="#{adminLivrosBean.livro.id}" required="true" id="id" styleClass="form-control" />
 		       	<div class="form-group">
 		            <h:outputLabel value="Título" />
 		            <h:inputText value="#{adminLivrosBean.livro.titulo}" required="true" id="titulo" styleClass="form-control" />

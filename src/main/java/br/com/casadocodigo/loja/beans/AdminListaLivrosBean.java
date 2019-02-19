@@ -21,6 +21,5 @@ public class AdminListaLivrosBean {
 		this.livros = dao.listar();
 		return livros;
 	}
-	
 
 }
