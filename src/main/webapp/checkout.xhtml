@@ -16,17 +16,6 @@
 
 	<title>#{livroDetalheBean.livro.titulo} - Casa do Código</title>
 
-<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/pixel.js"></script>
-<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/ec.js"></script>
-<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/analytics.js"></script>
-<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/userreport.js"></script>
-<script src="#{request.contextPath}/resources/js/eoo8tyd.js" async=""></script>
-<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/shopify_stats.js"></script>
-<script async="" src="#{request.contextPath}/resources/js/trekkie.storefront.min.js"></script>
-<script async="" src="#{request.contextPath}/resources/js/shop_events_listener-002c206011fad5a2879a7a294d2ab2bc92451d9e2b5bbd0e634db3265e15665e.js"></script>
-<script type="text/javascript" src="#{request.contextPath}/resources/js/ga_urchin_forms-0826cdefee6590321eb5c0c435eeebf7a8425a5493a9e95059c40e07e069ad52.js"></script>
-
-
 	<link rel="stylesheet" href="#{request.contextPath}/resources/css/reset.css" />
 
 	<link rel="stylesheet" href="#{request.contextPath}/resources/css/container.css" />
@@ -260,21 +249,21 @@
 		<section class="infoSection container">
 	<h2 class="infoSection-titulo">Checkout</h2>
 	
-<form method="post" jsf:id="formCheckout">
-	<div class="form-group">
-		<label>Nome</label>
-		<input class="form-control" type="text" autofocus="autofocus" placeholder="Nome Completo" jsf:value="#{checkoutBean.usuario.nome}"/>
-	</div>
-	<div class="form-group">
-		<label>E-mail</label>
-		<input class="form-control" type="email" placeholder="E-mail" jsf:value="#{checkoutBean.usuario.email}" />
-	</div>
-	<div class="form-group">
-		<label>Senha</label>
-		<input class="form-control" type="password" placeholder="Senha" jsf:value="#{checkoutBean.usuario.senha}" />
-	</div>
-	<button class="btn btn-primary" type="submit" jsf:action="#{checkoutBean.finalizar}">Finalizar Compra</button>
-</form>
+	<form method="post" jsf:id="formCheckout">
+		<div class="form-group">
+			<label>Nome</label>
+			<input class="form-control" type="text" autofocus="autofocus" placeholder="Nome Completo" jsf:value="#{checkoutBean.usuario.nome}"/>
+		</div>
+		<div class="form-group">
+			<label>E-mail</label>
+			<input class="form-control" type="email" placeholder="E-mail" jsf:value="#{checkoutBean.usuario.email}" />
+		</div>
+		<div class="form-group">
+			<label>Senha</label>
+			<input class="form-control" type="password" placeholder="Senha" jsf:value="#{checkoutBean.usuario.senha}" />
+		</div>
+		<button class="btn btn-primary" type="submit" jsf:action="#{checkoutBean.finalizar}">Finalizar Compra</button>
+	</form>
 	
 </section>
 
@@ -1082,4 +1071,17 @@
 </footer>
 	<script type="text/javascript" src="#{request.contextPath}/resources/js/trackExternalLinks.js"></script>
 	<script type="text/javascript" src="#{request.contextPath}/resources/js/userreport.js"></script>
-<div style="width: auto; height: auto; position: fixed; z-index: 100000004; display: block; visibility: visible; overflow-x: hidden; bottom: 22%; left: 0px;"><iframe id="crowd-shortcut" name="crowd-shortcut" frameborder="0" scrolling="no" class="urp-no-hide" src="#{request.contextPath}/resources/saved_resource.html" style="max-width: none !important; width: 187px; display: block; height: 44px; margin-left: -143px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; visibility: visible;"></iframe></div></body><object id="988ba819-7a1a-af97-0988-b98b699195a2" width="0" height="0" type="application/gas-events-uni"></object></html>
+<div style="width: auto; height: auto; position: fixed; z-index: 100000004; display: block; visibility: visible; overflow-x: hidden; bottom: 22%; left: 0px;"><iframe id="crowd-shortcut" name="crowd-shortcut" frameborder="0" scrolling="no" class="urp-no-hide" src="#{request.contextPath}/resources/saved_resource.html" style="max-width: none !important; width: 187px; display: block; height: 44px; margin-left: -143px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; visibility: visible;"></iframe></div>
+
+		<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/pixel.js"></script>
+		<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/ec.js"></script>
+		<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/analytics.js"></script>
+		<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/userreport.js"></script>
+		<script src="#{request.contextPath}/resources/js/eoo8tyd.js" async=""></script>
+		<script type="text/javascript" async="" src="#{request.contextPath}/resources/js/shopify_stats.js"></script>
+		<script async="" src="#{request.contextPath}/resources/js/trekkie.storefront.min.js"></script>
+		<script async="" src="#{request.contextPath}/resources/js/shop_events_listener-002c206011fad5a2879a7a294d2ab2bc92451d9e2b5bbd0e634db3265e15665e.js"></script>
+		<script type="text/javascript" src="#{request.contextPath}/resources/js/ga_urchin_forms-0826cdefee6590321eb5c0c435eeebf7a8425a5493a9e95059c40e07e069ad52.js"></script>
+	</body>
+
+</html>

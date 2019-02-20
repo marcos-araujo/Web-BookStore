@@ -3,193 +3,93 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:o="http://omnifaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core">
 	
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
-		<meta name="viewport" content="width=device-width"></meta>
-		<title>Livros de Java, SOA, Android, iPhone, Ruby on Rails e muito mais - Casa do Código</title>
+	<ui:composition template="/templates/_admin_template_shop.xhtml">
 	
-		<script src="#{request.contextPath}/resources/js/pixel.js" type="text/javascript" async=""></script>
-		<script src="#{request.contextPath}/resources/js/analytics.js" type="text/javascript" async=""></script>
-		<script src="#{request.contextPath}/resources/js/userreport.js" type="text/javascript" async=""></script>
-		<script src="#{request.contextPath}/resources/js/eoo8tyd.js" async=""></script>
-		<script src="#{request.contextPath}/resources/js/trekkie.storefront.min.js" async=""></script>
-		<link rel="stylesheet" href="#{request.contextPath}/resources/css/style.css"></link>
-	
-		<link rel="stylesheet" href="#{request.contextPath}/resources/css/l" media="all"></link>
-		<script src="#{request.contextPath}/resources/js/settings.js" async="" class="lazyload" charset="utf-8"></script>
-		<script src="#{request.contextPath}/resources/js/SystemSettings.js" async="" class="lazyload" charset="utf-8"></script>
-	
-		<style type="text/css" media="screen">
-			#urp-f-1 {visibility:hidden}#urp-f-1 {visibility:visible}#urp-f-2 {visibility:hidden}#urp-f-2 {visibility:visible}
-		</style>
-		<script src="#{request.contextPath}/resources/js/analytics-tags.js" async="" class="lazyload" charset="utf-8"></script>
-		<script src="#{request.contextPath}/resources/js/pub_5d9e31afbcac9492bffa.js" type="text/javascript"></script>
-		<script src="#{request.contextPath}/resources/js/jquery.min.js" type="text/javascript"></script>
-	</head>
-
-	<body cz-shortcut-listen="true">
-		<header role="banner" class="cabecalhoPrincipal container">
-			<h1 class="cabecalhoPrincipal-titulo">
-				<a tabindex="1" href="#" class="cabecalhoPrincipal-linkTitulo">
+		<ui:define name="body">
+		
+			<main>
+				<o:cache scope="application">
+					<section class="vitrineDestaquinho container">
+						<h2 class="vitrineDestaquinho-titulo">Últimos lançamentos</h2>
+						<ul class="vitrineDestaquinho-lista">
+							<ui:repeat value="#{homeBean.ultimosLancamentos()}" var="livro">
+							    <li class="livroNaVitrine vitrineDestaquinho-produto">
+							        <a href="#{request.contextPath}/livro-detalhe.xhtml?id=#{livro.id}" class="livroNaVitrine-link" title="#{livro.titulo}">
+							            <div class="livroNaVitrine-imagemContainer" role="presentation">
+							                <img class="livroNaVitrine-imagem" src="#{request.contextPath}/file/#{livro.capaPath}" alt="#{livro.titulo}" title="#{livro.titulo}" />
+							            </div>
+							            <span class="livroNaVitrine-nome">#{livro.titulo}</span>
+							        </a>
+							    </li>
+							</ui:repeat>
+						</ul>
+					</section>
 				
-					<svg class="logo" role="img" aria-labelledby="altLogo" width="157px" height="55px" viewBox="-181 211.4 207.5 55" preserveAspectRatio="xMinYMid slice">
-						
-						<title id="altLogo">Casa do Código - Livros e Tecnologia</title>
-						
-						<rect class="logo-backgroundSimbolo" x="-181" y="211.4" width="65" height="55"></rect>
-						
-						<g class="logo-simbolo">
-							<path transform="translate(-0.1, 0)" class="logo-simboloParteInterna" d="M-133.6,234.2v-7.2l0,0.2h-22.6v24.7h22.6v0.3l0-7.2h-15.9v-10.8H-133.6"></path>
-							<path class="logo-simboloParteExterna" d="M-149.4,251.9h-6.9v-24.7h22.6v-6.9h-22.6l-6.7,6.9v24.7l6.7,6.9h22.6v-6.9H-149.4"></path>
-						</g>
-					</svg>
-				</a>
-			</h1>
-	
-			<div id="navegacaoCabecalho" class="cabecalhoPrincipal-navegacao">
-				<div class="cabecalhoPrincipal-categoriasEBusca" role="presentation">
-					<nav role="navigation" aria-label="Categorias de livros" class="colecoesDaCDC">
-						<li class="colecoesDaCDC-colecaoItem">
-							<a href="" class="colecoesDaCDC-colecaoLink">Todos</a>
+					<h3 class="homeCall container">Todos os nossos livros</h3>
+				
+					<section class="vitrineDaColecao container">
+						<ul class="vitrineDaColecao-lista">
+							<ui:repeat value="#{homeBean.demaisLivros()}" var="livro">
+						        <li class="livroNaVitrine vitrineDaColecao-produto">
+						            <a href="#{request.contextPath}/livro-detalhe.xhtml?id=#{livro.id}" class="livroNaVitrine-link" title="#{livro.titulo}">
+						                <div class="livroNaVitrine-imagemContainer" role="presentation">
+						                    <img class="livroNaVitrine-imagem" src="#{request.contextPath}/file/#{livro.capaPath}" alt="#{livro.titulo}" title="#{livro.titulo}" />
+						                </div>
+						                <span class="livroNaVitrine-nome">#{livro.titulo}</span>
+						            </a>
+						        </li>
+							</ui:repeat>
+						</ul>
+					</section>
+					
+				</o:cache>
+		
+			</main>
+			
+			<footer class="caelumGroup">
+				<div class="caelumGroup-footer" role="presentation">
+					<p>
+						<a class="caelumGroup-title" href="http://www.caelum.com.br/grupo">
+							<img src="#{request.contextPath}/resources/imagens/group-logo.svg" alt="Grupo Caelum" />
+						</a>
+					</p>
+					<ul>
+						<li>
+							<a href="http://www.caelum.com.br/">
+								<img alt="Caelum" class="caelumGroup-footer-logo" src="#{request.contextPath}/resources/imagens/caelum-logo.svg" />
+							</a>
 						</li>
-						<li class="colecoesDaCDC-colecaoItem">
-							<a href="" class="colecoesDaCDC-colecaoLink">Front e Design</a>
+						<li>
+							<a href="http://www.alura.com.br/">
+								<img alt="Alura" class="caelumGroup-footer-alura-logo" src="#{request.contextPath}/resources/imagens/alura-logo.svg" />
+							</a>
 						</li>
-						<li class="colecoesDaCDC-colecaoItem">
-							<a href="" class="colecoesDaCDC-colecaoLink">Games</a>
+						<li>
+							<a href="http://www.casadocodigo.com.br/">
+								<img alt="Casa do Código" class="caelumGroup-footer-cdc-logo" src="#{request.contextPath}/resources/imagens/c-d-c-logo.svg" />
+							</a>
 						</li>
-						<li class="colecoesDaCDC-colecaoItem">
-							<a href="" class="colecoesDaCDC-colecaoLink">Gestão</a>
+						<li>
+							<a href="http://www.guj.com.br/">
+								<img alt="GUJ" class="caelumGroup-footer-guj-logo" src="#{request.contextPath}/resources/imagens/g-u-j-logo.svg" />
+							</a>
 						</li>
-						<li class="colecoesDaCDC-colecaoItem">
-							<a href="" class="colecoesDaCDC-colecaoLink">Java</a>
-						</li>
-						<li class="colecoesDaCDC-colecaoItem">
-							<a href="" class="colecoesDaCDC-colecaoLink">Mobile</a>
-						</li>
-					    <c:if test="#{currentUser.hasRole('ADMIN')}">
-						    <li class="colecoesDaCDC-colecaoItem">
-						        <a href="#{request.contextPath}/livros/lista.xhtml" class="colecoesDaCDC-colecaoLink">
-						            Administração
-						        </a>
-						    </li>
-						</c:if>
-					</nav>
-					<form role="search" aria-labelledby="rotuloBuscaPrincipal" action="https://www.casadocodigo.com.br/search" method="GET" class="buscaPrincipal">
-						<label id="rotuloBuscaPrincipal" class="buscaPrincipal-label" for="campoBuscaPrincipal">
-							Busque por autor, título, conteúdo...
-						</label>
-						<input type="hidden" name="type" value="product"></input>
-						<input id="campoBuscaPrincipal" class="buscaPrincipal-campo" placeholder="O que você procura?" type="search" name="q" required="" aria-required=""></input>
-						<button class="buscaPrincipal-submit" type="submit">Buscar</button>
-					</form>
+					</ul>
 				</div>
-	
-				<a tabindex="2" class="cabecalhoPrincipal-itemNavegacao cabecalhoPrincipal-mostraCategoriasEBusca" href="https://www.casadocodigo.com.br/#navegacaoCabecalho">
-					<img class="cabecalhoPrincipal-iconeItemNavegacao" src="#{request.contextPath}/resources/imagens/search.svg" alt="Abrir navegação por categorias e busca"></img>
-				</a>
-	
-				<a tabindex="-1" class="cabecalhoPrincipal-itemNavegacao cabecalhoPrincipal-escondeCategoriasEBusca" href="https://www.casadocodigo.com.br/#">
-					<img class="cabecalhoPrincipal-iconeItemNavegacao" src="#{request.contextPath}/resources/imagens/search.svg" alt="Ir para ao topo da página" />
-				</a>
-
-				<a tabindex="3" href="https://www.casadocodigo.com.br/cart" title="Ir para sacola de compras" class="sacola cabecalhoPrincipal-itemNavegacao">
-					<svg width="28px" height="34px" viewBox="0 0 28 34" role="img" aria-labelledby="sacolaLabel" class="sacola-icone">
-						<title id="sacolaLabel">
-							Você tem 0 itens na sacola
-						</title>
-						<path fill="#f8965d" d="M1.66666667,26.9714355 L18.3333333,26.9714355 C19.2533333,26.9714355 20,26.2247689 20,25.3047689 L20,6.97143555 C20,6.05143555 19.2533333,5.30476888 18.3333333,5.30476888 L14.9916667,5.30476888 C14.9516667,2.53643555 12.735,0.30476888 10,0.30476888 C7.265,0.30476888 5.04833333,2.53643555 5.00833333,5.30476888 L1.66666667,5.30476888 C0.746666667,5.30476888 0,6.05143555 0,6.97143555 L0,25.3047689 C0,26.2247689 0.746666667,26.9714355 1.66666667,26.9714355 L1.66666667,26.9714355 Z M12.5,10.3047689 L7.5,10.3047689 C7.04,10.3047689 6.66666667,9.93143555 6.66666667,9.47143555 C6.66666667,9.01143555 7.04,8.63810221 7.5,8.63810221 L12.5,8.63810221 C12.96,8.63810221 13.3333333,9.01143555 13.3333333,9.47143555 C13.3333333,9.93143555 12.96,10.3047689 12.5,10.3047689 L12.5,10.3047689 Z M10,1.97143555 C11.8116667,1.97143555 13.285,3.45976888 13.325,5.30476888 L6.675,5.30476888 C6.715,3.45976888 8.18833333,1.97143555 10,1.97143555 L10,1.97143555 Z"></path>
-						<g>
-							<circle cx="19.5" cy="24.8047689" r="8.5" role="presentation" fill="#FFF"></circle>
-							<text text-decoration="none" text-anchor="middle" x="19.5" y="30" class="sacola-contador">0</text>
-						</g>
-					 </svg>
-				</a>
-			</div>
-		</header>
-	
-		<main>
-			<o:cache scope="application">
-				<section class="vitrineDestaquinho container">
-					<h2 class="vitrineDestaquinho-titulo">Últimos lançamentos</h2>
-					<ul class="vitrineDestaquinho-lista">
-						<ui:repeat value="#{homeBean.ultimosLancamentos()}" var="livro">
-						    <li class="livroNaVitrine vitrineDestaquinho-produto">
-						        <a href="#{request.contextPath}/livro-detalhe.xhtml?id=#{livro.id}" class="livroNaVitrine-link" title="#{livro.titulo}">
-						            <div class="livroNaVitrine-imagemContainer" role="presentation">
-						                <img class="livroNaVitrine-imagem" src="#{request.contextPath}/file/#{livro.capaPath}" alt="#{livro.titulo}" title="#{livro.titulo}" />
-						            </div>
-						            <span class="livroNaVitrine-nome">#{livro.titulo}</span>
-						        </a>
-						    </li>
-						</ui:repeat>
-					</ul>
-				</section>
+			</footer>
 			
-				<h3 class="homeCall container">Todos os nossos livros</h3>
-			
-				<section class="vitrineDaColecao container">
-					<ul class="vitrineDaColecao-lista">
-						<ui:repeat value="#{homeBean.demaisLivros()}" var="livro">
-					        <li class="livroNaVitrine vitrineDaColecao-produto">
-					            <a href="#{request.contextPath}/livro-detalhe.xhtml?id=#{livro.id}" class="livroNaVitrine-link" title="#{livro.titulo}">
-					                <div class="livroNaVitrine-imagemContainer" role="presentation">
-					                    <img class="livroNaVitrine-imagem" src="#{request.contextPath}/file/#{livro.capaPath}" alt="#{livro.titulo}" title="#{livro.titulo}" />
-					                </div>
-					                <span class="livroNaVitrine-nome">#{livro.titulo}</span>
-					            </a>
-					        </li>
-						</ui:repeat>
-					</ul>
-				</section>
-				
-			</o:cache>
-	
-		</main>
+			<script>
+			    var canalDePromos = new WebSocket("ws://localhost:8080/#{request.contextPath}/canal/promos");
+			    canalDePromos.onmessage = function(message) {
+			        var novaPromo = JSON.parse(message.data);
+			        if(confirm("Que tal aproveitar a promoção relâmpago " + novaPromo.titulo)) {
+			            document.location.href="#{request.contextPath}/livro-detalhe.xhtml?id=" + novaPromo.livroId;
+			        }
+			    };
+			</script>
 		
-		<footer class="caelumGroup">
-			<div class="caelumGroup-footer" role="presentation">
-				<p>
-					<a class="caelumGroup-title" href="http://www.caelum.com.br/grupo">
-						<img src="#{request.contextPath}/resources/imagens/group-logo.svg" alt="Grupo Caelum" />
-					</a>
-				</p>
-				<ul>
-					<li>
-						<a href="http://www.caelum.com.br/">
-							<img alt="Caelum" class="caelumGroup-footer-logo" src="#{request.contextPath}/resources/imagens/caelum-logo.svg" />
-						</a>
-					</li>
-					<li>
-						<a href="http://www.alura.com.br/">
-							<img alt="Alura" class="caelumGroup-footer-alura-logo" src="#{request.contextPath}/resources/imagens/alura-logo.svg" />
-						</a>
-					</li>
-					<li>
-						<a href="http://www.casadocodigo.com.br/">
-							<img alt="Casa do Código" class="caelumGroup-footer-cdc-logo" src="#{request.contextPath}/resources/imagens/c-d-c-logo.svg" />
-						</a>
-					</li>
-					<li>
-						<a href="http://www.guj.com.br/">
-							<img alt="GUJ" class="caelumGroup-footer-guj-logo" src="#{request.contextPath}/resources/imagens/g-u-j-logo.svg" />
-						</a>
-					</li>
-				</ul>
-			</div>
-		</footer>
+		</ui:define>
 		
-		<script>
-		    var canalDePromos = new WebSocket("ws://localhost:8080/#{request.contextPath}/canal/promos");
-		    canalDePromos.onmessage = function(message) {
-		        var novaPromo = JSON.parse(message.data);
-		        if(confirm("Que tal aproveitar a promoção relâmpago " + novaPromo.titulo)) {
-		            document.location.href="#{request.contextPath}/livro-detalhe.xhtml?id=" + novaPromo.livroId;
-		        }
-		    };
-		</script>
+	</ui:composition>
 	
-	</body>
-
 </html>
