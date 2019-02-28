@@ -1,538 +1,111 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
+<html xmlns="http://www.w3.org/1999/xhtml"	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:xlink="http://www.w3.org/1999/xlink"	xmlns:jsf="http://xmlns.jcp.org/jsf"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
-	<body cz-shortcut-listen="true">
+	<ui:composition template="/templates/_admin_template_shop_2.xhtml">
 	
-	<main>
+		<ui:define name="body">
 		
-	
-<article id="livro-certificacao-java-associate" itemscope="" itemtype="http://schema.org/Book">
-
-<form method="POST" class="adicionarAoCarrinho" jsf:id="formComprar">
-	<ul class="adicionarAoCarrinho-listaOfertas">
-		<li class="adicionarAoCarrinho-oferta" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-			<label class="adicionarAoCarrinho-infosDaOferta" for="product-variant-2055441665">
-				<span class="adicionarAoCarrinho-tipoDaOferta" role="presentation" itemprop="category" itemscope="" itemtype="http://schema.org/Ebook">
-					<span class="adicionarAoCarrinho-tipoDaOferta-nome">
-						E-book
-					</span>
-					<small class="adicionarAoCarrinho-tipoDaOferta-detalhe">
-						(.pdf, .epub e .mobi)
-					</small>
-				</span>
-				<p class="adicionarAoCarrinho-preco">
-						<small class="adicionarAoCarrinho-preco-promocao">
-							<del class="adicionarAoCarrinho-preco-promocao-valor">R$ 1099,90</del> por
-						</small>
-					<span class="adicionarAoCarrinho-preco-valor" itemprop="price">
-						R$ #{livroDetalheBean.livro.preco}
-					</span>
-				</p>
-			</label>
-			<button class="adicionarAoCarrinho-botaoComprar" jsf:action="#{carrinhoComprasBean.add(livroDetalheBean.id)}" type="submit" title="Compre o E-book">
-				Comprar
-			</button>
-		</li>
-	</ul>
-</form>
-	
-<section class="conteudoDoLivro infoSection" itemprop="description" style="margin-top: 140px;">
-	<h2 class="infoSection-titulo">
-		Conteúdo
-	</h2>
-	<p class="infoSection-texto">
-		#{livroDetalheBean.livro.descricao}
-	</p>
-	
-	<p class="infoSection-texto">
-		<a class="conteudoDoLivro-link" href="https://www.casadocodigo.com.br/pages/sumario-certificacao-java-associate">veja o sumário completo</a>
-	</p>
-</section>
-
-<section class="infosAdicionaisDoLivro infoSection">
-
-	<h2 class="infoSection-titulo">Dados do produto</h2>
-
-	<dl class="infosAdicionaisDoLivro-info">
-		<dt class="infosAdicionaisDoLivro-info-titulo">Número de páginas:</dt>
-		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="numberOfPages">#{livroDetalheBean.livro.numeroPaginas} páginas</dd>
-
-		<dt class="infosAdicionaisDoLivro-info-titulo">Data Publicação</dt>
-		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="dataPublicacao">
+			<main>
 		
-			<h:outputText value="#{livroDetalheBean.livro.dataPublicacao.time}">
-			    <f:convertDateTime pattern="dd/MM/yyyy" />
-			</h:outputText>
-		
-		</dd>
+				<article id="livro-certificacao-java-associate" itemscope="" itemtype="http://schema.org/Book">
 
-		<dt class="infosAdicionaisDoLivro-info-titulo">ISBN:</dt>
-		<dd class="infosAdicionaisDoLivro-info-valor" itemprop="isbn">978-85-5519-031-5</dd>
-	</dl>
-
-	<div class="infosAdicionaisDoLivro-links" role="presentation">
-		
-		<a class="infosAdicionaisDoLivro-button" href="http://erratas.casadocodigo.com.br/errata?book=Java%20SE%208%20Programmer%20I:%20O%20guia%20para%20sua%20certifica%C3%A7%C3%A3o%20Oracle%20Certified%20Associate">
-			Submeter errata
-		</a>
-		
-		<a class="infosAdicionaisDoLivro-button" rel="nofollow" href="http://forum.casadocodigo.com.br/" title="Ir para fórum de discussões">
-			Fórum de discussões
-		</a>
-	</div>
-</section>
-
-<section class="compartilhar infoSection">
-    <h2 class="infoSection-titulo">Compartilhe!</h2>
-    <a class="compartilhar-facebook" href="http://www.facebook.com/sharer/sharer.php?u=http://www.casadocodigo.com.br/products/livro-certificacao-java-associate" rel="nofollow" title="Compartilhe no Facebook" target="_blank">Compartilhe no Facebook</a>
-    <a class="compartilhar-twitter" href="https://twitter.com/home?status=Certifica%C3%A7%C3%A3o%20Java%20na%20@casadocodigo%20http://www.casadocodigo.com.br/products/livro-certificacao-java-associate" rel="nofollow" title="Compartilhe no Twitter" target="_blank">Compartilhe no Twitter</a>
-</section>
+				<form method="POST" class="adicionarAoCarrinho" jsf:id="formComprar">
+					<ul class="adicionarAoCarrinho-listaOfertas">
+						<li class="adicionarAoCarrinho-oferta" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+							<label class="adicionarAoCarrinho-infosDaOferta" for="product-variant-2055441665">
+								<span class="adicionarAoCarrinho-tipoDaOferta" role="presentation" itemprop="category" itemscope="" itemtype="http://schema.org/Ebook">
+									<span class="adicionarAoCarrinho-tipoDaOferta-nome">E-book</span>
+									<small class="adicionarAoCarrinho-tipoDaOferta-detalhe">(.pdf, .epub e .mobi)</small>
+								</span>
+								<p class="adicionarAoCarrinho-preco">
+										<small class="adicionarAoCarrinho-preco-promocao">
+											<del class="adicionarAoCarrinho-preco-promocao-valor">R$ 1099,90</del> por
+										</small>
+									<span class="adicionarAoCarrinho-preco-valor" itemprop="price">
+										R$ #{livroDetalheBean.livro.preco}
+									</span>
+								</p>
+							</label>
+							<button class="adicionarAoCarrinho-botaoComprar" jsf:action="#{carrinhoComprasBean.add(livroDetalheBean.id)}" type="submit" title="Compre o E-book">
+								Comprar
+							</button>
+						</li>
+					</ul>
+				</form>
 	
-</article>
+				<section class="conteudoDoLivro infoSection" itemprop="description" style="margin-top: 140px;">
+					<h2 class="infoSection-titulo">
+						Conteúdo
+					</h2>
+					<p class="infoSection-texto">
+						#{livroDetalheBean.livro.descricao}
+					</p>
+					<p class="infoSection-texto">
+						<a class="conteudoDoLivro-link" href="https://www.casadocodigo.com.br/pages/sumario-certificacao-java-associate">veja o sumário completo</a>
+					</p>
+				</section>
 
-<div class="buscaDoRodape container" role="presentation">
-	<form role="search" aria-labelledby="rotuloBuscaDoRodape" action="https://www.casadocodigo.com.br/search" method="GET" class="buscaDoRodape-formulario">
-		<label id="rotuloBuscaRodape" class="buscaDoRodape-rotuloEscondido" for="campoBuscaRodape">Busque por autor, título, conteúdo...</label>
-		<label class="buscaDoRodape-rotulo" for="campoBuscaRodape">Não encontrou o seu livro?</label>
-		<fieldset class="buscaDoRodape-fieldset">
-			<input type="hidden" name="type" value="product" />
-			<input id="campoBuscaRodape" class="buscaDoRodape-campo" placeholder="O que você procura?" type="search" name="q" required="" aria-required="" />
-			<button class="buscaDoRodape-enviar" type="submit">
-				Buscar
-			</button>
-		</fieldset>
-	</form>
-</div>
-	</main>
-	
-	<footer class="rodape">
-	<div class="container" role="presentation">
-		<div class="rodape-conteudo" role="presentation">
-			<section class="rodape-secao">
-				<a class="rodape-logo" href="https://www.casadocodigo.com.br/products/livro-certificacao-java-associate#" title="Voltar ao topo da página">
-				<img src="#{request.contextPath}/resources/imagens/logo-footer.svg" alt="altLogoFooter" />
-				</a>
-			</section>
-			<section class="rodape-secao rodape-secaoLinks">
-				<h3 class="rodape-titulo">Links da <div role="presentation" class="rodape-titulo-espacador"></div>Casa do Código</h3>
-				<ul>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="https://www.casadocodigo.com.br/pages/sobre-a-casa-do-codigo">
-							Sobre a Casa do Código
+				<section class="infosAdicionaisDoLivro infoSection">
+				
+					<h2 class="infoSection-titulo">Dados do produto</h2>
+				
+					<dl class="infosAdicionaisDoLivro-info">
+						<dt class="infosAdicionaisDoLivro-info-titulo">Número de páginas:</dt>
+						<dd class="infosAdicionaisDoLivro-info-valor" itemprop="numberOfPages">#{livroDetalheBean.livro.numeroPaginas} páginas</dd>
+				
+						<dt class="infosAdicionaisDoLivro-info-titulo">Data Publicação</dt>
+						<dd class="infosAdicionaisDoLivro-info-valor" itemprop="dataPublicacao">
+						
+							<h:outputText value="#{livroDetalheBean.livro.dataPublicacao.time}">
+							    <f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+						
+						</dd>
+				
+						<dt class="infosAdicionaisDoLivro-info-titulo">ISBN:</dt>
+						<dd class="infosAdicionaisDoLivro-info-valor" itemprop="isbn">978-85-5519-031-5</dd>
+					</dl>
+				
+					<div class="infosAdicionaisDoLivro-links" role="presentation">
+						
+						<a class="infosAdicionaisDoLivro-button" href="http://erratas.casadocodigo.com.br/errata?book=Java%20SE%208%20Programmer%20I:%20O%20guia%20para%20sua%20certifica%C3%A7%C3%A3o%20Oracle%20Certified%20Associate">
+							Submeter errata
 						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="https://www.casadocodigo.com.br/pages/quero-ser-um-autor">
-							Quero ser um autor
-						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="https://feedback.userreport.com/500b990e-9d86-4af5-ad72-3be3151b8dc0/" target="_blank">
-							Quero ler um livro sobre...
-						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="http://suporte.casadocodigo.com.br/">
-							Perguntas frequentes
-						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="http://forum.casadocodigo.com.br/">
+						
+						<a class="infosAdicionaisDoLivro-button" rel="nofollow" href="http://forum.casadocodigo.com.br/" title="Ir para fórum de discussões">
 							Fórum de discussões
 						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="http://www.caelum.com.br/" target="_blank">
-							Caelum Ensino e Inovação
-						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="http://www.galandra.com.br/" target="_blank">
-							Galandra - Reforce seu inglês
-						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="http://livros.casadocodigo.com.br/" rel="nofollow">
-							Meus E-books
-						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="http://www.codecrushing.com/" rel="nofollow">
-							Code Crushing
-						</a>
-					</li>
-					
-					<li class="rodape-item">
-						<a class="rodape-itemLink" href="https://www.casadocodigo.com.br/pages/politica-de-privacidade" rel="nofollow">
-							Política de Privacidade
-						</a>
-					</li>
-					
-				</ul>
-			</section><!--
+					</div>
+				</section>
 
-		 --><section class="rodape-secao rodape-secaoOutros">
-				<h3 class="rodape-titulo">Receba as novidades, promoções e lançamentos</h3>
-				<form class="rodape-formularioDaNewsletter" action="https://docs.google.com/spreadsheet/formResponse?formkey=dFhxZ2tDalFiclU4T2FLZVY4UXVUc2c6MQ&amp;embedded=true&amp;ifq" method="POST">
-					<input type="hidden" name="pageNumber" value="0" />
-					<input type="hidden" name="backupCache" value="" />
-					<input class="rodape-campoDaNewsletter" type="email" name="entry.0.single" value="" id="entry_0" placeholder="seu@email.com" /><!--
-				 --><button class="rodape-botaoDaNewsletter" type="submit" name="submit" id="submit-newsletter">ok</button>
+				<section class="compartilhar infoSection">
+				    <h2 class="infoSection-titulo">Compartilhe!</h2>
+				    <a class="compartilhar-facebook" href="http://www.facebook.com/sharer/sharer.php?u=http://www.casadocodigo.com.br/products/livro-certificacao-java-associate" rel="nofollow" title="Compartilhe no Facebook" target="_blank">Compartilhe no Facebook</a>
+				    <a class="compartilhar-twitter" href="https://twitter.com/home?status=Certifica%C3%A7%C3%A3o%20Java%20na%20@casadocodigo%20http://www.casadocodigo.com.br/products/livro-certificacao-java-associate" rel="nofollow" title="Compartilhe no Twitter" target="_blank">Compartilhe no Twitter</a>
+				</section>
+	
+				</article>
+
+			<div class="buscaDoRodape container" role="presentation">
+				<form role="search" aria-labelledby="rotuloBuscaDoRodape" action="https://www.casadocodigo.com.br/search" method="GET" class="buscaDoRodape-formulario">
+					<label id="rotuloBuscaRodape" class="buscaDoRodape-rotuloEscondido" for="campoBuscaRodape">Busque por autor, título, conteúdo...</label>
+					<label class="buscaDoRodape-rotulo" for="campoBuscaRodape">Não encontrou o seu livro?</label>
+					<fieldset class="buscaDoRodape-fieldset">
+						<input type="hidden" name="type" value="product" />
+						<input id="campoBuscaRodape" class="buscaDoRodape-campo" placeholder="O que você procura?" type="search" name="q" required="" aria-required="" />
+						<button class="buscaDoRodape-enviar" type="submit">
+							Buscar
+						</button>
+					</fieldset>
 				</form>
+			</div>
+		</main>
 
-				<h3 class="rodape-titulo rodape-tituloSecundario">Este site aceita</h3>
-				<ul>
-					<li class="rodape-formaDePagamento">
-						<img src="#{request.contextPath}/resources/imagens/pagseguro.png" border="0" alt="pag seguro" />
-					</li>
-					<li class="rodape-formaDePagamento">
-						<img src="#{request.contextPath}/resources/imagens/paypal.png" border="0" alt="paypal" />
-					</li>
-				</ul>
-
-				<h3 class="rodape-titulo rodape-tituloSecundario">Nas redes sociais</h3>
-				<ul>
-					<li class="rodape-item rodape-redeSocial">
-						<a class="compartilhar-facebook" href="http://www.facebook.com/casadocodigo" rel="nofollow" title="Casa do Código no Facebook" target="_blank">/CasaDoCodigo</a>
-					</li>
-					<li class="rodape-item rodape-redeSocial">
-						<a class="compartilhar-twitter" href="http://www.twitter.com/casadocodigo" rel="nofollow" title="Casa do Código no Twitter" target="_blank">@casadocodigo</a>
-					</li>
-				</ul>
-			</section>
-		</div>
-	</div>
-</footer>
-<footer class="categorias">
-	<div class="container" role="presentation">
-		<div class="categorias-footer" role="presentation">
-				<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-agile">
-						<h3 class="categorias-titulo">Livros de Agile</h3>
-					</a>
-					<ul>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-tdd">TDD com Java</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-scrum">Scrum</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-agile">Agile</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-testes-de-software">Testes de Software</a>
-						</li>
-					</ul>
-				</section>
-				<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-arquitetura">
-						<h3 class="categorias-titulo">Livros de Arquitetura</h3>
-					</a>
-					<ul>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-soa-webservices">SOA, web services e além</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-rest">REST</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-arquitetura-java">Arquitetura Java</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-apis-nodejs">APIs Node.js</a>
-						</li>
-					</ul>
-				</section>
-		 	 	<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-bancos-de-dados">
-						<h3 class="categorias-titulo">Livros de Bancos de Dados</h3>
-					</a>
-					<ul>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-mongodb">MongoDB</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-sql-oracle">SQL e banco de dados Oracle</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-plsql">Banco de Dados PL/SQL</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-banco-mysql">Banco MySQL</a>
-						</li>
-					</ul>
-				</section>
-		 	 	<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-conceitos-iniciais">
-						<h3 class="categorias-titulo">Livros de Conceitos Iniciais</h3>
-					</a>
-					<ul>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-programacao">Lógica de Programação</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-programador-apaixonado">O Programador Apaixonado</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-guia-frontend">Guia Front-End</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-jogos-html-javascript">Jogos com HTML5</a>
-						</li>
-					</ul>
-				</section>
-		 	 <section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-desenvolvimento-web">
-						<h3 class="categorias-titulo">Livros de Desenvolvimento Web</h3>
-					</a>
-					<ul>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-jsf-jpa">JSF e JPA</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-nodejs">Node.js</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-ruby-on-rails">Rails 4</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-rest">REST</a>
-							</li>
-					</ul>
-				</section>
-		 	 	<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-design">
-						<h3 class="categorias-titulo">Livros de Design</h3>
-					</a>
-					<ul>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-ux-user-experience">UX Design</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-photoshop">Adobe Photoshop</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-adobe-lightroom">Adobe Lightroom</a>
-						</li>
-					</ul>
-				</section>
-		 	 <section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-devops-e-infraestrutura">
-						<h3 class="categorias-titulo">Livros de Devops e Infraestrutura</h3>
-					</a>
-					<ul>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-git-github">Git e GitHub</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-devops">DevOps</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-linux">Linux</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-ferramentas-devops">Ferramentas DevOps</a>
-						</li>
-					</ul>
-				</section>
-		 	 	<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-empreendedorismo">
-						<h3 class="categorias-titulo">Livros de Empreendedorismo</h3>
-					</a>
-					<ul>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-startup-guia">Guia da Startup
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-seo">SEO na Prática
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-direto-ao-ponto">Direto ao Ponto
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-gestao-produtos">Gestão de Produtos
-								</a>
-							</li>
-					</ul>
-				</section>
-		 	 	<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-front-end">
-						<h3 class="categorias-titulo">Livros de Front End</h3>
-					</a>
-					<ul>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-html-css">HTML5 e CSS3
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-javascript-jquery">jQuery e JavaScript
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-web-design-responsivo">Web Design Responsivo
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-web-mobile">Web Mobile</a>
-							</li>
-					</ul>
-				</section>
-		 	 	<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-java">
-						<h3 class="categorias-titulo">Livros de Java</h3>
-					</a>
-					<ul>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-jsf-jpa">
-	JSF e JPA
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-rest">
-	REST
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-design-patterns">
-	Design Patterns
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-spring-framework">
-	Spring Framework
-								</a>
-							</li>
-					</ul>
-				</section>
-		 	 	<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-linguagens">
-						<h3 class="categorias-titulo">Livros de Linguagens</h3>
-					</a>
-					<ul>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-html-css">
-	HTML5 e CSS3
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-ruby">
-	Ruby
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-orientacao-objetos-java">
-	Java e OO
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-java8">
-	Java 8 Prático
-								</a>
-							</li>
-					</ul>
-				</section>
-		 	 	<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-mobile">
-						<h3 class="categorias-titulo">Livros de Mobile</h3>
-					</a>
-					<ul>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-android">
-	Google Android
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-web-design-responsivo">
-	Web Design Responsivo
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-iphone-ipad-ios">
-	iOS, iPhone e iPad
-								</a>
-							</li>
-							<li class="categorias-item">
-								<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-swift-ios">
-	Swift e iOS
-								</a>
-							</li>
-					</ul>
-				</section>
-				<section class="categorias-secao">
-		 	 		<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/collections/livros-de-tendencias">
-						<h3 class="categorias-titulo">Livros de Tendências</h3>
-					</a>
-					<ul>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-mean">MEAN</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-mongodb">MongoDB</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-meteor">Meteor</a>
-						</li>
-						<li class="categorias-item">
-							<a class="categorias-itemLink" href="https://www.casadocodigo.com.br/products/livro-google-go">Google Go</a>
-						</li>
-					</ul>
-				</section>
-		</div>
-	</div>
-</footer>
-<footer class="caelumGroup">
-	<div class="caelumGroup-footer" role="presentation">
-		<p>
-			<a class="caelumGroup-title" href="http://www.caelum.com.br/grupo">
-				<img src="#{request.contextPath}/resources/imagens/group-logo.svg" alt="Grupo Caelum" />
-			</a>
-		</p>
-
-		<ul>
-			<li>
-				<a href="http://www.caelum.com.br/">
-					<img alt="Caelum" class="caelumGroup-footer-logo" src="#{request.contextPath}/resources/imagens/caelum-logo.svg" />
-				</a>
-			</li>
-			<li>
-				<a href="http://www.alura.com.br/">
-					<img alt="Alura" class="caelumGroup-footer-alura-logo" src="#{request.contextPath}/resources/imagens/alura-logo.svg" />
-				</a>
-			</li>
-			<li>
-				<a href="http://www.casadocodigo.com.br/">
-					<img alt="Casa do Código" class="caelumGroup-footer-cdc-logo" src="#{request.contextPath}/resources/imagens/c-d-c-logo.svg" />
-				</a>
-			</li>
-			<li>
-				<a href="http://www.guj.com.br/">
-					<img alt="GUJ" class="caelumGroup-footer-guj-logo" src="#{request.contextPath}/resources/imagens/g-u-j-logo.svg" />
-				</a>
-			</li>
-		</ul>
-	</div>
-</footer>
-
-</body>
-
-
+		</ui:define>
+		
+	</ui:composition>
+	
 </html>
