@@ -46,48 +46,6 @@
 		
 			</main>
 			
-			<footer class="caelumGroup">
-				<div class="caelumGroup-footer" role="presentation">
-					<p>
-						<a class="caelumGroup-title" href="http://www.caelum.com.br/grupo">
-							<img src="#{request.contextPath}/resources/imagens/group-logo.svg" alt="Grupo Caelum" />
-						</a>
-					</p>
-					<ul>
-						<li>
-							<a href="http://www.caelum.com.br/">
-								<img alt="Caelum" class="caelumGroup-footer-logo" src="#{request.contextPath}/resources/imagens/caelum-logo.svg" />
-							</a>
-						</li>
-						<li>
-							<a href="http://www.alura.com.br/">
-								<img alt="Alura" class="caelumGroup-footer-alura-logo" src="#{request.contextPath}/resources/imagens/alura-logo.svg" />
-							</a>
-						</li>
-						<li>
-							<a href="http://www.casadocodigo.com.br/">
-								<img alt="Casa do Código" class="caelumGroup-footer-cdc-logo" src="#{request.contextPath}/resources/imagens/c-d-c-logo.svg" />
-							</a>
-						</li>
-						<li>
-							<a href="http://www.guj.com.br/">
-								<img alt="GUJ" class="caelumGroup-footer-guj-logo" src="#{request.contextPath}/resources/imagens/g-u-j-logo.svg" />
-							</a>
-						</li>
-					</ul>
-				</div>
-			</footer>
-			
-			<script>
-			    var canalDePromos = new WebSocket("ws://localhost:8080/#{request.contextPath}/canal/promos");
-			    canalDePromos.onmessage = function(message) {
-			        var novaPromo = JSON.parse(message.data);
-			        if(confirm("Que tal aproveitar a promoção relâmpago " + novaPromo.titulo)) {
-			            document.location.href="#{request.contextPath}/livro-detalhe.xhtml?id=" + novaPromo.livroId;
-			        }
-			    };
-			</script>
-		
 		</ui:define>
 		
 	</ui:composition>
