@@ -45,7 +45,8 @@
 				    <h:message for="dataPublicacao" />
 				</div>
 				<div class="form-group">
-				    <h:outputLabel value="Capa do Livro" />
+				    <h:outputLabel value="Capa do Livro" />	
+					<img src="#{request.contextPath}/file/#{adminLivrosBean.livro.capaPath}" height="30%" alt="#{livro.titulo}" />
 				    <h:inputFile value="#{adminLivrosBean.capaLivro}" id="capaLivro" styleClass="form-control" />
 				    <h:message for="capaLivro" />
 				</div>

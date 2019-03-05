@@ -49,10 +49,12 @@ public class AdminLivrosBean {
 
 	@Transactional
 	public String salvar() {
-		dao.salvar(livro);
 		FileSaver fileSaver = new FileSaver();
-		livro.setCapaPath(fileSaver.write(capaLivro, "livros"));
-		
+		if(capaLivro != null)
+			livro.setCapaPath(fileSaver.write(capaLivro, "livros"));
+		else
+			livro.setCapaPath(dao.buscarPorId(livro.getId()).getCapaPath());
+		dao.salvar(livro);
 		context.getExternalContext().getFlash().setKeepMessages(true);
 		context.addMessage(null, new FacesMessage("Livro cadastrado com sucesso"));
 		return "/livros/lista?faces-redirect=true";
