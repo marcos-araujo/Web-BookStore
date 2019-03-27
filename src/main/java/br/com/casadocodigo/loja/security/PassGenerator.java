@@ -7,7 +7,7 @@ import org.jboss.security.Base64Encoder;
 public class PassGenerator {
 
 	public static void main(String[] args) {
-        System.out.println(new PassGenerator().generate("123"));
+        System.out.println(new PassGenerator().generate("admin"));
     }
 
     public String generate(String senhaTexto) {
