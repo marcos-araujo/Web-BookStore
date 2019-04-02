@@ -7,7 +7,7 @@
         <description>Dev persistence unit</description>
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <!-- java transaction api || JNDI -->
-        <jta-data-source>java:jboss/datasources/casadocodigoDS</jta-data-source>
+        <jta-data-source>java:jboss/datasources/livrariaDS</jta-data-source>
         <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
         <properties>
         	<property name="hibernate.cache.infinispan.entity.expiration.lifespan" value="900000"/>
