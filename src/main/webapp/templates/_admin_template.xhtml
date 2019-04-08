@@ -9,6 +9,7 @@
 	<h:head>
 	    <h:outputStylesheet library="css" name="bootstrap.min.css" />
 	    <h:outputStylesheet library="css" name="style-admin.css" />
+	    <h:outputStylesheet library="css" name="jquery-ui.css" />
 	</h:head>
 
 	<h:body>
@@ -39,8 +40,21 @@
 	        </nav>
 		</h:form>
 	
+	
+	 
 	    <div class="container">
 			<ui:insert name="body" />
 	    </div>
+	    
+	    <h:outputScript library="js" name="jquery.min.js" />
+	    <h:outputScript library="js" name="jquery-ui.js" />
+	    
+		<script>
+			$( function() {
+				$(".dataPublicacao").datepicker({
+					dateFormat: "dd/mm/yy"
+				});
+			} );
+		</script>
 	</h:body>
 </html>
