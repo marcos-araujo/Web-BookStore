@@ -13,11 +13,24 @@ public class AutorDAO {
     private EntityManager manager;
 
     public void salvar(Autor autor) {
-    	manager.persist(autor);
+    	if(autor.getId() == null)
+    		manager.persist(autor);
+    	else
+    		manager.merge(autor);
+    }
+    
+    public void deletar(Autor autor) {
+    	autor = manager.find(Autor.class, autor.getId());
+    	manager.remove(autor);
     }
     
     public List<Autor> listar(){
         return manager.createQuery("select a from Autor a", Autor.class).getResultList();        
     }
+    
+	public Autor buscarPorId(Integer id) {
+	    String jpql = "select a from Autor a where a.id = :id";
+	    return manager.createQuery(jpql, Autor.class).setParameter("id", id).getSingleResult();
+	}
 
 }

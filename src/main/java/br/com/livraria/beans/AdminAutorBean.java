@@ -30,7 +30,7 @@ public class AdminAutorBean {
 		autorDAO.salvar(autor);
 		context.getExternalContext().getFlash().setKeepMessages(true);
 		context.addMessage(null, new FacesMessage("Autor cadastrado com sucesso"));
-		return "/livros/lista?faces-redirect=true";
+		return "/autor/form?faces-redirect=true";
 	}
 	
 	public List<Autor> getAutores(){
@@ -46,21 +46,16 @@ public class AdminAutorBean {
 		this.autor = autor;
 	}
 
-//	@Transactional
-//	public String editar(Livro livro) {
-//		this.setLivro(dao.buscarPorId(livro.getId()));
-//		return "/livros/form";
-//	}
-//	
-//	@Transactional
-//	public String deletar(Livro livro) {
-//		dao.deletar(livro);
-//		//fazer deleção do arquivo
-//		
-//		context.getExternalContext().getFlash().setKeepMessages(true);
-//		context.addMessage(null, new FacesMessage("Livro deletado"));
-//		
-//		return "/livros/lista?faces-redirect=true";
-//	}
+	@Transactional
+	public String deletar(Autor autor) {
+		autorDAO.deletar(autor);
+		return "/autor/form?faces-redirect=true";
+	}
+
+	@Transactional
+	public String editar(Autor autor) {
+		this.setAutor(autorDAO.buscarPorId(autor.getId()));
+		return "/autor/form";
+	}
 	
 }
