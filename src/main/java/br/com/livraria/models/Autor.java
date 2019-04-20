@@ -1,19 +1,25 @@
 package br.com.livraria.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Autor {
 
+	public Autor() {}
+	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
-
     private String nome;
     
-    public Autor() {}
+    @ManyToMany(mappedBy= "autores")
+    List<Livro> livros = new ArrayList<>();
     
     public Autor(Integer id) {
         this.id = id;
@@ -31,6 +37,14 @@ public class Autor {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public List<Livro> getLivros() {
+		return livros;
+	}
+
+	public void setLivros(List<Livro> livros) {
+		this.livros = livros;
 	}
 
 	@Override

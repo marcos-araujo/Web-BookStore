@@ -12,29 +12,29 @@
     
 	    	<h1>Cadastro de Autores</h1>
 			<h:form enctype="multipart/form-data">
-				<h:inputHidden value="#{adminAutorBean.autor.id}" id="id" styleClass="form-control" />
+				<h:inputHidden value="#{autorBean.autor.id}" id="id" styleClass="form-control" />
 		       	<div class="form-group">
 		            <h:outputLabel value="nome" />
-		            <h:inputText value="#{adminAutorBean.autor.nome}" required="true" id="nome" styleClass="form-control" />
+		            <h:inputText value="#{autorBean.autor.nome}" required="true" id="nome" styleClass="form-control" />
 		            <h:message for="titulo" />
 		        </div>
-		        <h:commandButton value="Cadastrar" action="#{adminAutorBean.salvar}" styleClass="btn btn-primary" />	    
+		        <h:commandButton value="Cadastrar" action="#{autorBean.salvar}" styleClass="btn btn-primary" />	    
 	        </h:form>
 	        
 	        <br />
 	        
 			<h:form>
-				<h:inputHidden value="#{adminAutorBean.autor.id}" id="id" styleClass="form-control" />
-			 	<h:dataTable var="autor" value="#{adminAutorBean.autores}" class="table table-bordered table-striped table-hover">
+				<h:inputHidden value="#{autorBean.autor.id}" id="id" styleClass="form-control" />
+			 	<h:dataTable var="autor" value="#{autorBean.autores}" class="table table-bordered table-striped table-hover">
 			        <h:column>
 			            <f:facet name="header">Nome</f:facet>
 			            #{autor.nome}
 			        </h:column>
 			       	<h:column>
-					    <h:commandLink value="Editar" action="#{adminAutorBean.editar(autor)}" styleClass="btn btn-primary" />
+					    <h:commandLink value="Editar" action="#{autorBean.editar(autor)}" styleClass="btn btn-primary" />
 					</h:column>
 			       	<h:column>
-					    <h:commandLink value="Deletar" action="#{adminAutorBean.deletar(autor)}" styleClass="btn btn-danger" />
+					    <h:commandLink value="Deletar" action="#{autorBean.deletar(autor)}" styleClass="btn btn-danger" />
 					</h:column>
 			    </h:dataTable>
 			</h:form>

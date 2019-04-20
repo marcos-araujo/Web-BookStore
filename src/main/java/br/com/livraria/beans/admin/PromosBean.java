@@ -1,4 +1,4 @@
-package br.com.livraria.beans;
+package br.com.livraria.beans.admin;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
@@ -7,7 +7,7 @@ import br.com.livraria.models.Promo;
 import br.com.livraria.websockets.PromosEndpoint;
 
 @Model
-public class AdminPromosBean {
+public class PromosBean {
 
     private Promo promo = new Promo();
     

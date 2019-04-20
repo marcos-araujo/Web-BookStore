@@ -1,4 +1,4 @@
-package br.com.livraria.beans;
+package br.com.livraria.beans.admin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import br.com.livraria.daos.AutorDAO;
 import br.com.livraria.models.Autor;
 
 @Model
-public class AdminAutorBean {
+public class AutorBean {
 	
 	@Inject
 	private AutorDAO autorDAO;
