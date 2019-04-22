@@ -56,6 +56,7 @@ public class Livro {
 	@XmlElementWrapper(name="autores")
     private List<Autor> autores = new ArrayList<>();
 	
+	@NotBlank	
 	@Temporal(TemporalType.DATE)
 	private Calendar dataPublicacao;
 	

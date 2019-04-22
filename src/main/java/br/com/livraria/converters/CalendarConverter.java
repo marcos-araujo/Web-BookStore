@@ -23,6 +23,8 @@ public class CalendarConverter implements Converter {
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String dataTexto) {
         Date data = (Date) converter.getAsObject(context, component, dataTexto);
+        if(data == null) return null;
+        
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(data);
         return calendar;
