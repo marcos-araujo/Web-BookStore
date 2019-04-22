@@ -27,7 +27,7 @@ public class LivroDAO {
 	}
 	
 	public List<Livro> listar() {
-		String jpql = "select distinct(l) from Livro l join fetch l.autores";
+		String jpql = "select distinct(l) from Livro l left join fetch l.autores";
 		return manager.createQuery(jpql, Livro.class).getResultList();
 	}
 
@@ -42,7 +42,7 @@ public class LivroDAO {
 	 }
 
 	public Livro buscarPorId(Integer id) {
-	    String jpql = "select l from Livro l join fetch l.autores where l.id = :id";
+	    String jpql = "select l from Livro l left join fetch l.autores where l.id = :id";
 	    return manager.createQuery(jpql, Livro.class).setParameter("id", id).getSingleResult();
 	}
 

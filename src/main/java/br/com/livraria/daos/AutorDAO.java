@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import br.com.livraria.models.Autor;
+import br.com.livraria.models.Livro;
 
 public class AutorDAO {
 	
@@ -21,7 +23,17 @@ public class AutorDAO {
     
     public void deletar(Autor autor) {
     	autor = manager.find(Autor.class, autor.getId());
-    	manager.remove(autor);
+    	List<Livro> livros = autor.getLivros();
+    	if(livros.isEmpty())
+    		manager.remove(autor);
+    	else {
+    		Query query = manager.createNativeQuery("DELETE FROM LIVRO_AUTOR WHERE AUTORES_ID = ?");
+    		query.setParameter(1, autor.getId());
+    		query.executeUpdate();
+    		
+    		manager.remove(autor);
+    	}
+    		
     }
     
     public List<Autor> listar(){

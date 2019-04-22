@@ -1,4 +1,4 @@
-package br.com.livraria.beans;
+package br.com.livraria.beans.admin;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import br.com.livraria.models.Autor;
 import br.com.livraria.models.Livro;
 
 @Model
-public class AdminLivrosBean {
+public class LivrosBean {
 	
 	@Inject
 	private LivroDAO dao;

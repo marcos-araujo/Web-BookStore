@@ -1,4 +1,4 @@
-package br.com.livraria.beans;
+package br.com.livraria.beans.admin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import br.com.livraria.daos.LivroDAO;
 import br.com.livraria.models.Livro;
 
 @Model
-public class AdminListaLivrosBean {
+public class ListaLivrosBean {
 	
 	@Inject
 	private LivroDAO dao;
