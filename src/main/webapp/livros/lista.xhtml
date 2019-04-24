@@ -43,10 +43,10 @@
 					    <img src="#{request.contextPath}/file/#{livro.capaPath}" height="30%" alt="#{livro.titulo}" />
 					</h:column>
 			       	<h:column>
-					    <h:commandLink value="Deletar" action="#{livrosBean.deletar(livro)}" styleClass="btn btn-primary" />
+					    <h:commandLink value="Editar" action="#{livrosBean.editar(livro)}" styleClass="btn btn-primary" />
 					</h:column>
 			       	<h:column>
-					    <h:commandLink value="Editar" action="#{livrosBean.editar(livro)}" styleClass="btn btn-primary" />
+					    <h:commandLink value="Deletar" action="#{livrosBean.deletar(livro)}" styleClass="btn btn-danger" />
 					</h:column>
 			    </h:dataTable>
 			</h:form>

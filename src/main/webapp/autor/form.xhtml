@@ -6,7 +6,7 @@
     
     <ui:composition template="/templates/_admin_template.xhtml">
     
-    	<ui:param name="cadastro" value="active" />
+    	<ui:param name="autores" value="active" />
     
     	<ui:define name="body">
     
@@ -30,7 +30,7 @@
 			            <f:facet name="header">Nome</f:facet>
 			            #{autor.nome}
 			        </h:column>
-			       	<h:column>
+			       	<h:column styleClass="width: 16.66%">
 					    <h:commandLink value="Editar" action="#{autorBean.editar(autor)}" styleClass="btn btn-primary" />
 					</h:column>
 			       	<h:column>

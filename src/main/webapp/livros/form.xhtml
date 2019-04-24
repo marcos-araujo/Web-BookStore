@@ -13,6 +13,7 @@
 	    	<h1>Cadastro de Livros</h1>
 			<h:form enctype="multipart/form-data">
 				<h:inputHidden value="#{livrosBean.livro.id}" id="id" styleClass="form-control" />
+		       	
 		       	<div class="form-group">
 		            <h:outputLabel value="Título" />
 		            <h:inputText value="#{livrosBean.livro.titulo}" required="true" id="titulo" styleClass="form-control" />
@@ -23,34 +24,37 @@
 		            <h:inputTextarea rows="4" cols="20" required="true" value="#{livrosBean.livro.descricao}" id="descricao" styleClass="form-control" />
 		            <h:message for="descricao" />
 		        </div>
-		        <div class="form-group">
-		            <h:outputLabel value="Número de Páginas"/>
-		            <h:inputText value="#{livrosBean.livro.numeroPaginas}" required="true" id="numeroPaginas" styleClass="form-control" />
-		            <h:message for="numeroPaginas" />
+		        
+		        <div class="form-row">
+		        	<div class="form-group col-md-4">
+			            <h:outputLabel value="Número de Páginas"/>
+			            <h:inputText value="#{livrosBean.livro.numeroPaginas}" required="true" id="numeroPaginas" styleClass="form-control" />
+			            <h:message for="numeroPaginas" />
+		        	</div>
+		        	<div class="form-group col-md-4">
+			            <h:outputLabel value="Preço"/>
+			            <h:inputText value="#{livrosBean.livro.preco}" required="true" id="preco" styleClass="form-control" />
+			            <h:message for="preco" />
+		        	</div>
+		        	<div class="form-group col-md-4">
+					    <h:outputLabel value="Data de Publicação" />
+					    <h:inputText value="#{livrosBean.livro.dataPublicacao}" required="true" id="dataPublicacao" styleClass="form-control dataPublicacao" />
+					    <h:message for="dataPublicacao" />
+		        	</div>
 		        </div>
-		        <div class="form-group">
-		            <h:outputLabel value="Preço"/>
-		            <h:inputText value="#{livrosBean.livro.preco}" required="true" id="preco" styleClass="form-control" />
-		            <h:message for="preco" />
-		        </div>
+		        
 		        <div class="form-group">
 				    <h:outputLabel value="Autores" />
 				    <h:selectManyListbox value="#{livrosBean.livro.autores}" converter="autorConverter" id="autores" styleClass="form-control">
 				        <f:selectItems value="#{livrosBean.autores}" var="autor" itemValue="#{autor}" itemLabel="#{autor.nome}" />
 				    </h:selectManyListbox>
 				</div>
-				<div class="form-group">
-				    <h:outputLabel value="Data de Publicação" />
-
-				    <h:inputText value="#{livrosBean.livro.dataPublicacao}" required="true" id="dataPublicacao" styleClass="form-control dataPublicacao" />
-
-				    <h:message for="dataPublicacao" />
-				</div>
+				
 				<div class="form-group">
 				    <h:outputLabel value="Capa" />	
 				    <br />
 					
-					<h:graphicImage rendered="#{livrosBean.livro.capaPath ne null}" value="/file/#{livrosBean.livro.capaPath}" />
+					<h:graphicImage width="200" rendered="#{livrosBean.livro.capaPath ne null}" value="/file/#{livrosBean.livro.capaPath}" />
 					
 				    <h:inputFile rendered="#{livrosBean.livro.capaPath eq null}" value="#{livrosBean.capaLivro}" id="capaLivro" styleClass="form-control" />
 				    
