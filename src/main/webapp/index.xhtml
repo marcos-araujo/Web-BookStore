@@ -10,7 +10,6 @@
 			<main>
 				<o:cache scope="application">
 					<section class="vitrineDestaquinho container">
-						<h2 class="vitrineDestaquinho-titulo">Últimos lançamentos</h2>
 						<ul class="vitrineDestaquinho-lista">
 							<ui:repeat value="#{homeBean.ultimosLancamentos()}" var="livro">
 							    <li class="livroNaVitrine vitrineDestaquinho-produto">
@@ -24,8 +23,6 @@
 							</ui:repeat>
 						</ul>
 					</section>
-				
-					<h3 class="homeCall container">Todos os nossos livros</h3>
 				
 					<section class="vitrineDaColecao container">
 						<ul class="vitrineDaColecao-lista">
