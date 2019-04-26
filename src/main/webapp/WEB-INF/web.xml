@@ -33,4 +33,9 @@
       <form-error-page>/usuarios/login.xhtml</form-error-page>
     </form-login-config>
   </login-config>
+  
+	<welcome-file-list>
+	    <welcome-file>index.xhtml</welcome-file>
+	</welcome-file-list>
+	
 </web-app>
