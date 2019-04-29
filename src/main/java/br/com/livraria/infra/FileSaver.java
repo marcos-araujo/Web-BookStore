@@ -17,7 +17,7 @@ public class FileSaver {
 	public static final String SERVER_PATH = "/livraria";
 
     public String write(Part arquivo, String path) {
-        String relativePath =  path + "/" + arquivo.getSubmittedFileName();
+        String relativePath =  path + "/" + System.currentTimeMillis() + "_" + arquivo.getSubmittedFileName();
         try {
             arquivo.write(SERVER_PATH + "/" + relativePath);
             return relativePath;

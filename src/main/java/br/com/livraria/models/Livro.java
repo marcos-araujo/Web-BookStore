@@ -50,8 +50,7 @@ public class Livro {
 	private Integer numeroPaginas;
 	
 	@ManyToMany
-	@Size(min=1)
-	@NotNull
+	//@Size(min=1)
 	@XmlElement(name="autor")
 	@XmlElementWrapper(name="autores")
     private List<Autor> autores = new ArrayList<>();

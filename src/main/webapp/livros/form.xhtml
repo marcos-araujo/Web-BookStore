@@ -56,7 +56,7 @@
 					
 					<h:graphicImage width="200" rendered="#{livrosBean.livro.capaPath ne null}" value="/file/#{livrosBean.livro.capaPath}" />
 					
-				    <h:inputFile rendered="#{livrosBean.livro.capaPath eq null}" value="#{livrosBean.capaLivro}" id="capaLivro" styleClass="form-control" />
+				    <h:inputFile rendered="#{livrosBean.livro.capaPath eq null}" required="true" value="#{livrosBean.capaLivro}" id="capaLivro" styleClass="form-control" />
 				    
 				    <h:message for="capaLivro" />
 				</div>
