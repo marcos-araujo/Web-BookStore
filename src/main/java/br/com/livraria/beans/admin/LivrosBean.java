@@ -50,10 +50,17 @@ public class LivrosBean {
 	@Transactional
 	public String salvar() {
 		FileSaver fileSaver = new FileSaver();
-		if(capaLivro != null)
+		
+		if(livro.getId() == null && (capaLivro != null))
 			livro.setCapaPath(fileSaver.write(capaLivro, "livros"));
 		else
-			livro.setCapaPath(dao.buscarPorId(livro.getId()).getCapaPath());
+			if(capaLivro != null) {
+				String capaPath = dao.buscarPorId(livro.getId()).getCapaPath();
+				fileSaver.delete(capaPath);
+				
+				livro.setCapaPath(fileSaver.write(capaLivro, "livros"));
+			}
+		
 		dao.salvar(livro);
 		context.getExternalContext().getFlash().setKeepMessages(true);
 		context.addMessage(null, new FacesMessage("Livro cadastrado com sucesso"));
@@ -68,8 +75,11 @@ public class LivrosBean {
 	
 	@Transactional
 	public String deletar(Livro livro) {
+		FileSaver fileSaver = new FileSaver();
+		
 		dao.deletar(livro);
-		//fazer deleção do arquivo
+		
+		fileSaver.delete(livro.getCapaPath());
 		
 		context.getExternalContext().getFlash().setKeepMessages(true);
 		context.addMessage(null, new FacesMessage("Livro deletado"));

@@ -15,6 +15,7 @@ public class LivroDAO {
 	private EntityManager manager;
 
 	public void salvar(Livro livro) {
+		//arrumar
 		if(livro.getId() == null)
 			manager.persist(livro);
 		else

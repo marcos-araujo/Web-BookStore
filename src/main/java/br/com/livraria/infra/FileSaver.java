@@ -1,5 +1,6 @@
 package br.com.livraria.infra;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -24,6 +25,11 @@ public class FileSaver {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    
+    public void delete(String fileName) {
+    	File file = new File(SERVER_PATH + "/" + fileName);
+    	file.delete();
     }
     
     public static void transfer(Path source, OutputStream outputStream) {
