@@ -10,11 +10,11 @@
     
     	<ui:define name="body">
     
-	    	<h1>Cadastro de Autores</h1>
+	    	<br /><br />
 			<h:form enctype="multipart/form-data">
 				<h:inputHidden value="#{autorBean.autor.id}" id="id" styleClass="form-control" />
 		       	<div class="form-group">
-		            <h:outputLabel value="nome" />
+		            <h:outputLabel value="Nome" />
 		            <h:inputText value="#{autorBean.autor.nome}" required="true" id="nome" styleClass="form-control" />
 		            <h:message for="titulo" />
 		        </div>

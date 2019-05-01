@@ -59,6 +59,8 @@ public class LivrosBean {
 				fileSaver.delete(capaPath);
 				
 				livro.setCapaPath(fileSaver.write(capaLivro, "livros"));
+			} else {
+				livro.setCapaPath(dao.buscarPorId(livro.getId()).getCapaPath());
 			}
 		
 		dao.salvar(livro);

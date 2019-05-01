@@ -7,26 +7,17 @@
 	<ui:composition template="/templates/_admin_template.xhtml">
 		
 		<ui:param name="lista" value="active" />
-	
+
 		<ui:define name="body">
 	
-			<h1>Lista de livros</h1>
-	
 			<h:messages />
+			<br /><br />
 	
 			<h:form>
 			 	<h:dataTable var="livro" value="#{listaLivrosBean.livros}" class="table table-bordered table-striped table-hover">
 			        <h:column>
 			            <f:facet name="header">Título</f:facet>
 			            #{livro.titulo}
-			        </h:column>
-			        <h:column>
-			            <f:facet name="header">Descrição</f:facet>
-			            #{livro.descricao}
-			        </h:column>
-			        <h:column>
-			            <f:facet name="header">Páginas</f:facet>
-			            #{livro.numeroPaginas}
 			        </h:column>
 			        <h:column>
 			            <f:facet name="header">Preço</f:facet>
@@ -39,7 +30,7 @@
 			            </ui:repeat>
 			        </h:column>
 			       	<h:column>
-					    <f:facet name="header">Capa Path</f:facet>
+					    <f:facet name="header">Capa</f:facet>
 					    <img src="#{request.contextPath}/file/#{livro.capaPath}" height="30%" alt="#{livro.titulo}" />
 					</h:column>
 			       	<h:column>

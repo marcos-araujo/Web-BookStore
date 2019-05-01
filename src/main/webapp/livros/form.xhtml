@@ -10,7 +10,7 @@
     
     	<ui:define name="body">
     
-	    	<h1>Cadastro de Livros</h1>
+	    	<br /><br />
 			<h:form enctype="multipart/form-data">
 				<h:inputHidden value="#{livrosBean.livro.id}" id="id" styleClass="form-control" />
 		       	
@@ -27,7 +27,7 @@
 		        
 		        <div class="form-row">
 		        	<div class="form-group col-md-4">
-			            <h:outputLabel value="Número de Páginas"/>
+			            <h:outputLabel value="Páginas"/>
 			            <h:inputText value="#{livrosBean.livro.numeroPaginas}" required="true" id="numeroPaginas" styleClass="form-control" />
 			            <h:message for="numeroPaginas" />
 		        	</div>
@@ -55,7 +55,7 @@
 					
 					<h:graphicImage width="200" rendered="#{livrosBean.livro.capaPath ne null}" value="/file/#{livrosBean.livro.capaPath}" />
 					
-				    <h:inputFile  required="true" value="#{livrosBean.capaLivro}" id="capaLivro" styleClass="form-control" />
+				    <h:inputFile value="#{livrosBean.capaLivro}" id="capaLivro" styleClass="form-control" />
 				    
 				    <!-- rendered="#{livrosBean.livro.capaPath eq null}" -->
 				    
