@@ -17,7 +17,6 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,6 +60,8 @@ public class Livro {
 	
 	private String capaPath;
     
+	private String codigo;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -117,11 +118,20 @@ public class Livro {
 		this.capaPath = capaPath;
 	}
 	
-	@Override
-	public String toString() {
-		return "Livro [titulo=" + titulo + ", descricao=" + descricao + ", preco=" + preco + ", numeroPaginas="	+ numeroPaginas + "]";
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 	
+	@Override
+	public String toString() {
+		return "Livro [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", preco=" + preco
+				+ ", numeroPaginas=" + numeroPaginas + ", autores=" + autores + ", dataPublicacao=" + dataPublicacao
+				+ ", capaPath=" + capaPath + ", codigo=" + codigo + "]";
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

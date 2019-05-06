@@ -14,15 +14,16 @@ import br.com.livraria.daos.LivroDAO;
 import br.com.livraria.infra.FileSaver;
 import br.com.livraria.models.Autor;
 import br.com.livraria.models.Livro;
+import br.com.livraria.util.IdGenerator;
 
 @Model
 public class LivrosBean {
 	
 	@Inject
-	private LivroDAO dao;
+	private LivroDAO livroDAO;
 	
 	@Inject
-	private AutorDAO autoDAO;
+	private AutorDAO autorDAO;
 	
 	private Livro livro = new Livro();
 	
@@ -55,15 +56,17 @@ public class LivrosBean {
 			livro.setCapaPath(fileSaver.write(capaLivro, "livros"));
 		else
 			if(capaLivro != null) {
-				String capaPath = dao.buscarPorId(livro.getId()).getCapaPath();
+				String capaPath = livroDAO.buscarPorId(livro.getId()).getCapaPath();
 				fileSaver.delete(capaPath);
 				
 				livro.setCapaPath(fileSaver.write(capaLivro, "livros"));
 			} else {
-				livro.setCapaPath(dao.buscarPorId(livro.getId()).getCapaPath());
+				livro.setCapaPath(livroDAO.buscarPorId(livro.getId()).getCapaPath());
 			}
 		
-		dao.salvar(livro);
+		livro.setCodigo(IdGenerator.generateId(livroDAO));
+		
+		livroDAO.salvar(livro);
 		context.getExternalContext().getFlash().setKeepMessages(true);
 		context.addMessage(null, new FacesMessage("Livro cadastrado com sucesso"));
 		return "/livros/lista?faces-redirect=true";
@@ -71,7 +74,7 @@ public class LivrosBean {
 
 	@Transactional
 	public String editar(Livro livro) {
-		this.setLivro(dao.buscarPorId(livro.getId()));
+		this.setLivro(livroDAO.buscarPorId(livro.getId()));
 		return "/livros/form";
 	}
 	
@@ -79,7 +82,7 @@ public class LivrosBean {
 	public String deletar(Livro livro) {
 		FileSaver fileSaver = new FileSaver();
 		
-		dao.deletar(livro);
+		livroDAO.deletar(livro);
 		
 		fileSaver.delete(livro.getCapaPath());
 		
@@ -90,7 +93,7 @@ public class LivrosBean {
 	}
 	
 	public List<Autor> getAutores(){
-        return autoDAO.listar();
+        return autorDAO.listar();
 	}
 
 }

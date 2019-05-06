@@ -47,4 +47,15 @@ public class LivroDAO {
 	    return manager.createQuery(jpql, Livro.class).setParameter("id", id).getSingleResult();
 	}
 
+	public Livro buscarPorCodigo(String codigo) {
+		Livro livro = null;
+	    String jpql = "select l from Livro l where l.codigo = :codigo";
+	    
+	    try {
+	    	livro = manager.createQuery(jpql, Livro.class).setParameter("codigo", codigo).getSingleResult();
+		} catch (Exception e) {
+		}
+	    
+	    return livro;
+	}
 }
