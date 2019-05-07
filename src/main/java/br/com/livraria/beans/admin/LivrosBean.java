@@ -64,7 +64,8 @@ public class LivrosBean {
 				livro.setCapaPath(livroDAO.buscarPorId(livro.getId()).getCapaPath());
 			}
 		
-		livro.setCodigo(IdGenerator.generateId(livroDAO));
+		if(livro.getCodigo().isEmpty())
+			livro.setCodigo(IdGenerator.generateId(livroDAO));
 		
 		livroDAO.salvar(livro);
 		context.getExternalContext().getFlash().setKeepMessages(true);

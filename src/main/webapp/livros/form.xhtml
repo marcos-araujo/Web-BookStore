@@ -13,7 +13,11 @@
 	    	<br /><br />
 			<h:form enctype="multipart/form-data">
 				<h:inputHidden value="#{livrosBean.livro.id}" id="id" styleClass="form-control" />
-		       	
+
+		       	<div class="form-group">
+		            <h:outputLabel value="Código" />
+		            <h:inputText value="#{livrosBean.livro.codigo}" disabled="true" id="codigo" styleClass="form-control" />
+		        </div>
 		       	<div class="form-group">
 		            <h:outputLabel value="Título" />
 		            <h:inputText value="#{livrosBean.livro.titulo}" required="true" id="titulo" styleClass="form-control" />
@@ -40,6 +44,37 @@
 					    <h:outputLabel value="Data de Publicação" />
 					    <h:inputText value="#{livrosBean.livro.dataPublicacao}" required="true" id="dataPublicacao" styleClass="form-control dataPublicacao" />
 					    <h:message for="dataPublicacao" />
+		        	</div>
+		        </div>
+		        
+				<div class="form-row">
+		        	<div class="form-group col-md-4">
+			            <h:outputLabel value="ISBN-10"/>
+			            <h:inputText value="#{livrosBean.livro.isbn10}" required="true" id="isbn10" styleClass="form-control" />
+			            <h:message for="isbn10" />
+		        	</div>
+		        	<div class="form-group col-md-4">
+			            <h:outputLabel value="ISBN-13"/>
+			            <h:inputText value="#{livrosBean.livro.isbn13}" required="true" id="isbn13" styleClass="form-control" />
+			            <h:message for="isbn13" />
+		        	</div>
+		        	<div class="form-group col-md-4">
+					    <h:outputLabel value="Idioma" />
+					    <h:inputText value="#{livrosBean.livro.idioma}" required="true" id="idioma" styleClass="form-control" />
+					    <h:message for="idioma" />
+		        	</div>
+		        </div>
+		        
+				<div class="form-row">
+		        	<div class="form-group col-md-4">
+			            <h:outputLabel value="Gênero"/>
+			            <h:inputText value="#{livrosBean.livro.genero}" required="true" id="genero" styleClass="form-control" />
+			            <h:message for="genero" />
+		        	</div>
+		        	<div class="form-group col-md-4">
+					    <h:outputLabel value="Editora" />
+					    <h:inputText value="#{livrosBean.livro.editora}" required="true" id="editora" styleClass="form-control" />
+					    <h:message for="editora" />
 		        	</div>
 		        </div>
 		        

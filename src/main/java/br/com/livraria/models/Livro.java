@@ -62,6 +62,16 @@ public class Livro {
     
 	private String codigo;
 	
+	private Long isbn10;
+	
+	private Long isbn13;
+	
+	private String idioma;
+	
+	private String genero;
+	
+	private String editora;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -125,13 +135,49 @@ public class Livro {
 		this.codigo = codigo;
 	}
 	
+	public Long getIsbn10() {
+		return isbn10;
+	}
+	public void setIsbn10(Long isbn10) {
+		this.isbn10 = isbn10;
+	}
+	
+	public Long getIsbn13() {
+		return isbn13;
+	}
+	public void setIsbn13(Long isbn13) {
+		this.isbn13 = isbn13;
+	}
+	
+	public String getIdioma() {
+		return idioma;
+	}
+	public void setIdioma(String idioma) {
+		this.idioma = idioma;
+	}
+	
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+	
+	public String getEditora() {
+		return editora;
+	}
+	public void setEditora(String editora) {
+		this.editora = editora;
+	}
+	
 	@Override
 	public String toString() {
 		return "Livro [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", preco=" + preco
 				+ ", numeroPaginas=" + numeroPaginas + ", autores=" + autores + ", dataPublicacao=" + dataPublicacao
-				+ ", capaPath=" + capaPath + ", codigo=" + codigo + "]";
+				+ ", capaPath=" + capaPath + ", codigo=" + codigo + ", isbn10=" + isbn10 + ", isbn13=" + isbn13
+				+ ", idioma=" + idioma + ", genero=" + genero + ", editora=" + editora + "]";
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
