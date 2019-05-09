@@ -78,6 +78,12 @@ public class LivrosBean {
 		this.setLivro(livroDAO.buscarPorId(livro.getId()));
 		return "/livros/form";
 	}
+
+	@Transactional
+	public String informacao(Livro livro) {
+		this.setLivro(livroDAO.buscarPorId(livro.getId()));
+		return "/livros/livro";
+	}
 	
 	@Transactional
 	public String deletar(Livro livro) {
