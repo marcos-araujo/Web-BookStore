@@ -22,6 +22,8 @@ public class LivrosBean {
 	@Inject
 	private LivroDAO livroDAO;
 	
+	private Integer id;
+	
 	@Inject
 	private AutorDAO autorDAO;
 	
@@ -48,6 +50,10 @@ public class LivrosBean {
 		this.capaLivro = capaLivro;
 	}
 
+	public void carregaDetalhe() {
+		this.livro = livroDAO.buscarPorId(id);
+	}
+	
 	@Transactional
 	public String salvar() {
 		FileSaver fileSaver = new FileSaver();
@@ -64,7 +70,7 @@ public class LivrosBean {
 				livro.setCapaPath(livroDAO.buscarPorId(livro.getId()).getCapaPath());
 			}
 		
-		if(livro.getCodigo().isEmpty())
+		if(livro.getCodigo() == null)
 			livro.setCodigo(IdGenerator.generateId(livroDAO));
 		
 		livroDAO.salvar(livro);
