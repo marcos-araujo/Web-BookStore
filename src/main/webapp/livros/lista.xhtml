@@ -17,7 +17,7 @@
 			 	<h:dataTable var="livro" value="#{listaLivrosBean.livros}" class="table table-bordered table-striped table-hover">
 			        <h:column>
 			            <f:facet name="header">Título</f:facet>
-			            <h:commandLink value="#{livro.titulo}" action="#{livrosBean.informacao(livro)}" styleClass="btn btn-primary" />
+			            <h:commandLink value="#{livro.titulo}" action="#{livrosBean.informacao(livro)}" />
 			        </h:column>
 			        <h:column>
 			            <f:facet name="header">Preço</f:facet>

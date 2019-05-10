@@ -15,87 +15,63 @@
 				<h:inputHidden value="#{livrosBean.livro.id}" id="id" styleClass="form-control" />
 
 		       	<div class="form-group">
-		            <h:outputLabel value="Código" />
-		            <h:inputText value="#{livrosBean.livro.codigo}" disabled="true" id="codigo" styleClass="form-control" />
+		            <h:outputLabel value="Código" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.codigo}" />
 		        </div>
+		        
 		       	<div class="form-group">
-		            <h:outputLabel value="Título" />
-		            <h:inputText value="#{livrosBean.livro.titulo}" required="true" id="titulo" styleClass="form-control" />
-		            <h:message for="titulo" />
+		            <h:outputLabel value="Título" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.titulo}" /> 
 		        </div>
+		        
 		        <div class="form-group">
-		            <h:outputLabel value="Descrição"/>
-		            <h:inputTextarea rows="4" cols="20" required="true" value="#{livrosBean.livro.descricao}" id="descricao" styleClass="form-control" />
-		            <h:message for="descricao" />
+		            <h:outputLabel value="Descrição" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.descricao}"/>
 		        </div>
 		        
 		        <div class="form-row">
 		        	<div class="form-group col-md-4">
-			            <h:outputLabel value="Páginas"/>
-			            <h:inputText value="#{livrosBean.livro.numeroPaginas}" required="true" id="numeroPaginas" styleClass="form-control" />
-			            <h:message for="numeroPaginas" />
+			            <h:outputLabel value="Páginas" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.numeroPaginas}"/>
 		        	</div>
 		        	<div class="form-group col-md-4">
-			            <h:outputLabel value="Preço"/>
-			            <h:inputText value="#{livrosBean.livro.preco}" required="true" id="preco" styleClass="form-control" />
-			            <h:message for="preco" />
+			            <h:outputLabel value="Preço" styleClass="formLabel" />: R$ <h:outputLabel value="#{livrosBean.livro.preco}"/>
 		        	</div>
 		        	<div class="form-group col-md-4">
-					    <h:outputLabel value="Data de Publicação" />
-					    <h:inputText value="#{livrosBean.livro.dataPublicacao}" required="true" id="dataPublicacao" styleClass="form-control dataPublicacao" />
-					    <h:message for="dataPublicacao" />
+					    <h:outputLabel value="Data de Publicação" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.dataPublicacao}" />
 		        	</div>
 		        </div>
 		        
 				<div class="form-row">
 		        	<div class="form-group col-md-4">
-			            <h:outputLabel value="ISBN-10"/>
-			            <h:inputText value="#{livrosBean.livro.isbn10}" required="true" id="isbn10" styleClass="form-control" />
-			            <h:message for="isbn10" />
+			            <h:outputLabel value="ISBN-10" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.idioma}"/>
 		        	</div>
 		        	<div class="form-group col-md-4">
-			            <h:outputLabel value="ISBN-13"/>
-			            <h:inputText value="#{livrosBean.livro.isbn13}" required="true" id="isbn13" styleClass="form-control" />
-			            <h:message for="isbn13" />
+			            <h:outputLabel value="ISBN-13" styleClass="formLabel"/>: <h:outputLabel value="#{livrosBean.livro.idioma}"/>
 		        	</div>
 		        	<div class="form-group col-md-4">
-					    <h:outputLabel value="Idioma" />
-					    <h:inputText value="#{livrosBean.livro.idioma}" required="true" id="idioma" styleClass="form-control" />
-					    <h:message for="idioma" />
+					    <h:outputLabel value="Idioma" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.idioma}"/>
 		        	</div>
 		        </div>
 		        
 				<div class="form-row">
 		        	<div class="form-group col-md-4">
-			            <h:outputLabel value="Gênero"/>
-			            <h:inputText value="#{livrosBean.livro.genero}" required="true" id="genero" styleClass="form-control" />
-			            <h:message for="genero" />
+			            <h:outputLabel value="Gênero" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.genero}"/>
 		        	</div>
 		        	<div class="form-group col-md-4">
-					    <h:outputLabel value="Editora" />
-					    <h:inputText value="#{livrosBean.livro.editora}" required="true" id="editora" styleClass="form-control" />
-					    <h:message for="editora" />
+					    <h:outputLabel value="Editora" styleClass="formLabel" />: <h:outputLabel value="#{livrosBean.livro.editora}"/>
 		        	</div>
 		        </div>
 		        
 		        <div class="form-group">
-				    <h:outputLabel value="Autores" />
-				    <h:selectManyListbox value="#{livrosBean.livro.autores}" converter="autorConverter" id="autores" styleClass="form-control">
-				        <f:selectItems value="#{livrosBean.autores}" var="autor" itemValue="#{autor}" itemLabel="#{autor.nome}" />
-				    </h:selectManyListbox>
+				    <h:outputLabel value="Autores" styleClass="formLabel" />
+				    
+				    <h:dataTable var="autor" value="#{livrosBean.livro.autores}" class="table table-bordered table-striped table-hover">
+				    	<h:column>#{autor.nome}</h:column>
+				    </h:dataTable>
+				    
 				</div>
 				
 				<div class="form-group">
-				    <h:outputLabel value="Capa" /><br />
-					
 					<h:graphicImage width="200" rendered="#{livrosBean.livro.capaPath ne null}" value="/file/#{livrosBean.livro.capaPath}" />
-					
-				    <h:inputFile value="#{livrosBean.capaLivro}" id="capaLivro" styleClass="form-control" />
-				    
-				    <!-- rendered="#{livrosBean.livro.capaPath eq null}" -->
-				    
-				    <h:message for="capaLivro" />
 				</div>
+				
 		        <h:commandButton value="Salvar" action="#{livrosBean.salvar}" styleClass="btn btn-primary" />	    
 	        </h:form>
 	        
