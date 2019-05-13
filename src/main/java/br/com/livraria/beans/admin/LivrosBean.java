@@ -54,6 +54,14 @@ public class LivrosBean {
 		this.livro = livroDAO.buscarPorId(id);
 	}
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	@Transactional
 	public String salvar() {
 		FileSaver fileSaver = new FileSaver();
