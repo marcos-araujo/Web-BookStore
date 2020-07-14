@@ -5,7 +5,6 @@ A web bookstore and inventory control
 Sample project created for studying Java EE technologies.
 
 ## Specifications
-Project created  with:
 <ul>	
 	<li>CDI</li>
 	<li>JSF</li>
